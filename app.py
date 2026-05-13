@@ -1,10 +1,12 @@
 from flask import Flask, render_template, send_from_directory, request, jsonify, redirect, url_for, Response
 from flask_compress import Compress
+from whitenoise import WhiteNoise
 import os
 import json
 from datetime import datetime, date
 
 app = Flask(__name__)
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/', prefix='static/', max_age=31536000)
 Compress(app)
 
 # ── Compression config ──────────────────────────────────────
