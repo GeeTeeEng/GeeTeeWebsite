@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+
+{% block canonical %}https://gteng.co.za/contact{% endblock %}
+{% block meta %}
+<title>Contact Gee Tee Engineering | CNC Machining Germiston Gauteng | 082 925 8379</title>
+<meta name="description" content="Contact Gee Tee General Engineering in Germiston, Gauteng for CNC machining, EDM wire cutting, and precision engineering quotes. Cell: 082 925 8379 | Tel: 011 824 0619 | 9 Viking Way, Airport Park Ext 4, Germiston." />
+<meta name="keywords" content="contact Gee Tee Engineering, CNC machining quote Gauteng, precision engineering Germiston contact, 082 925 8379, engineering company Germiston, CNC machining quote South Africa" />
+{% endblock %}
+{% block og_title %}Contact Gee Tee Engineering | Germiston, Gauteng{% endblock %}
+{% block og_desc %}Get in touch with Gee Tee General Engineering for CNC machining, EDM wire cutting, and precision engineering quotes. Cell: 082 925 8379 | 9 Viking Way, Airport Park Ext 4, Germiston, Gauteng.{% endblock %}
+{% block og_url %}https://gteng.co.za/contact{% endblock %}
+
+{% block page_jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Gee Tee General Engineering",
+  "url": "https://gteng.co.za/contact",
+  "description": "Contact page for Gee Tee General Engineering in Germiston, Gauteng, South Africa.",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "@id": "https://gteng.co.za/#business",
+    "name": "Gee Tee General Engineering (Pty) Ltd",
+    "telephone": "+27829258379",
+    "alternateTelephone": "+27118240619",
+    "email": "sales@gteng.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9 Viking Way, Airport Park Ext 4",
+      "addressLocality": "Germiston",
+      "addressRegion": "Gauteng",
+      "postalCode": "1401",
+      "addressCountry": "ZA"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gteng.co.za/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://gteng.co.za/contact"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <section class="page-banner" aria-label="Contact page header">
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <p class="page-banner-label">Get In Touch</p>
+      <h1 class="page-banner-title">Contact<br /><span>Our Team</span></h1>
+      <p class="page-banner-sub">We respond to all enquiries within 24 hours on business days.</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="content-section contact-section" aria-labelledby="contact-heading">
+      <div class="section-inner contact-grid">
+
+        <!-- Contact Details -->
+        <div class="contact-details" aria-label="Contact information">
+          <h2 id="contact-heading" class="section-heading">Let's Work<br />Together.</h2>
+          <p class="section-body">Whether you have technical drawings ready, a worn component to reverse-engineer, or a new concept to explore — our engineering team is ready to help. Send us your specifications and we'll provide a competitive, no-obligation quote.</p>
+
+          <div class="contact-info-cards">
+            <div class="contact-info-card" aria-label="Physical address">
+              <div class="contact-info-icon" aria-hidden="true">◎</div>
+              <div>
+                <p class="contact-info-label">Address</p>
+                <address>
+                  9 Viking Way, Airport Park Ext 4<br />
+                  Germiston, Gauteng, 1401<br />
+                  South Africa
+                </address>
+              </div>
+            </div>
+            <div class="contact-info-card" aria-label="Phone numbers">
+              <div class="contact-info-icon" aria-hidden="true">◉</div>
+              <div>
+                <p class="contact-info-label">Phone</p>
+                <p><a href="tel:+27829258379">082 925 8379</a></p>
+                <p><a href="tel:+27118240619">011 824 0619</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card" aria-label="Email address">
+              <div class="contact-info-icon" aria-hidden="true">◌</div>
+              <div>
+                <p class="contact-info-label">Email</p>
+                <p><a href="mailto:sales@gteng.co.za">sales@gteng.co.za</a></p>
+              </div>
+            </div>
+            <div class="contact-info-card" aria-label="Business hours">
+              <div class="contact-info-icon" aria-hidden="true">◷</div>
+              <div>
+                <p class="contact-info-label">Business Hours</p>
+                <p>Monday – Thursday: 07:30 – 16:45<br />Friday: 07:30 – 12:30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap" aria-label="Contact form">
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="/contact/submit"
+            method="post"
+            aria-label="Send a message to Gee Tee Engineering"
+          >
+            <h2 class="form-heading">Send Us a Message</h2>
+
+            <!-- Success / Error banner (hidden by default) -->
+            <div id="form-banner" class="form-banner" hidden aria-live="polite"></div>
+
+            <div class="form-row form-row--half">
+              <div class="form-group">
+                <label for="fname">First Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="fname" name="first_name" required autocomplete="given-name" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="lname" name="last_name" required autocomplete="family-name" placeholder="Smith" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="john@company.co.za" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="011 000 0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="CNC Turning">CNC Turning</option>
+                <option value="CNC Milling">CNC Milling</option>
+                <option value="EDM Wire Cutting">EDM Wire Cutting</option>
+                <option value="Surface Grinding">Surface Grinding</option>
+                <option value="Laser Engraving">Laser Engraving</option>
+                <option value="Reverse Engineering">Reverse Engineering</option>
+                <option value="Prototype Manufacturing">Prototype Manufacturing</option>
+                <option value="Other">Other / Multiple Services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message / Project Details <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="6" required placeholder="Describe your component, material, quantities, required tolerances, or upload details..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-large form-submit" id="form-submit-btn">
+              Send Message
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form-note">* Required fields. We respond within 24 hours on business days.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section" aria-label="Location map">
+      <div class="map-wrap">
+        <iframe
+          title="Gee Tee Engineering location — 9 Viking Way, Airport Park Ext 4, Germiston, Gauteng"
+          src="https://www.google.com/maps?q=Gee+Tee+General+Engineering,+9+Viking+Way,+Airport+Park+Ext+4,+Germiston,+Gauteng,+South+Africa&output=embed"
+          width="100%"
+          height="480"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google Maps showing Gee Tee Engineering at 9 Viking Way, Germiston"
+        ></iframe>
+      </div>
+    </section>
+
+  </main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+  var form = document.getElementById('contact-form');
+  var btn  = document.getElementById('form-submit-btn');
+  var banner = document.getElementById('form-banner');
+
+  // Check for URL param feedback (non-JS fallback)
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('success') === '1') showBanner('success', 'Thank you! We\'ll respond within 24 hours.');
+  if (params.get('error') === 'missing_fields') showBanner('error', 'Please fill in all required fields.');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Client-side validation
+    var fname = form.querySelector('[name="first_name"]').value.trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var msg   = form.querySelector('[name="message"]').value.trim();
+    if (!fname || !email || !msg) {
+      showBanner('error', 'Please fill in all required fields.');
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('/contact/submit', {
+      method: 'POST',
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      body: new FormData(form)
+    })
+    .then(function(res) { return res.json().then(function(d) { return { ok: res.ok, data: d }; }); })
+    .then(function(result) {
+      if (result.ok) {
+        showBanner('success', result.data.message || 'Thank you! We\'ll respond within 24 hours.');
+        form.reset();
+      } else {
+        showBanner('error', result.data.message || 'Something went wrong. Please try again.');
+      }
+    })
+    .catch(function() {
+      showBanner('error', 'Network error. Please call us on 082 925 8379 or try again later.');
+    })
+    .finally(function() {
+      btn.innerHTML = 'Send Message <span class="btn-arrow" aria-hidden="true">→</span>';
+      btn.disabled = false;
+    });
+  });
+
+  function showBanner(type, msg) {
+    banner.hidden = false;
+    banner.className = 'form-banner form-banner--' + type;
+    banner.textContent = msg;
+    banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (type === 'success') {
+      setTimeout(function() { banner.hidden = true; }, 8000);
+    }
+  }
+})();
+</script>
+{% endblock %}
+

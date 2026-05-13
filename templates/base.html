@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="{% block canonical %}https://gteng.co.za{% endblock %}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico?v=2" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon-192.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png?v=2" />
+
+  {% block meta %}
+  <title>Gee Tee General Engineering | CNC Machining Germiston Gauteng</title>
+  <meta name="description" content="Gee Tee General Engineering – precision CNC machining, EDM wire cutting, and surface grinding in Germiston, Gauteng since 1980." />
+  {% endblock %}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gee Tee General Engineering" />
+  <meta property="og:title" content="{% block og_title %}Gee Tee General Engineering | CNC Machining Gauteng{% endblock %}" />
+  <meta property="og:description" content="{% block og_desc %}Precision engineering solutions in Germiston, Gauteng. CNC turning, milling, EDM wire cutting since 1980.{% endblock %}" />
+  <meta property="og:url" content="{% block og_url %}https://gteng.co.za{% endblock %}" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:image" content="{% block og_image %}https://gteng.co.za/static/images/og-preview.jpg{% endblock %}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% block tw_title %}Gee Tee General Engineering{% endblock %}" />
+  <meta name="twitter:description" content="{% block tw_desc %}CNC machining, EDM wire cutting & precision engineering in Gauteng since 1980.{% endblock %}" />
+  <meta name="twitter:image" content="{% block tw_image %}https://gteng.co.za/static/images/og-preview.jpg{% endblock %}" />
+
+  <!-- Additional meta -->
+  <meta name="theme-color" content="#050810" />
+  <meta name="geo.region" content="ZA-GT" />
+  <meta name="geo.placename" content="Germiston, Gauteng, South Africa" />
+  <meta name="geo.position" content="-26.264;28.144" />
+  <meta name="ICBM" content="-26.264, 28.144" />
+  <meta name="author" content="Gee Tee General Engineering (Pty) Ltd" />
+
+  <!-- Language / Region -->
+  <link rel="alternate" hreflang="en-za" href="{% block hreflang_url %}https://gteng.co.za{% endblock %}" />
+  <link rel="alternate" hreflang="en" href="{% block hreflang_url_en %}https://gteng.co.za{% endblock %}" />
+
+  <!-- DNS prefetch & preconnect for CDN origins -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <!-- Preload critical hero image -->
+  <link rel="preload" href="/static/images/sequence/frame-1.webp" as="image" type="image/webp" />
+
+  <!-- GSAP (deferred — non-render-blocking) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/EasePack.min.js" defer></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/css/main.css?v=8" />
+  {% block head_extra %}{% endblock %}
+
+  <!-- JSON-LD: LocalBusiness (every page) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gteng.co.za/#website",
+        "url": "https://gteng.co.za",
+        "name": "Gee Tee General Engineering",
+        "publisher": {"@id": "https://gteng.co.za/#business"}
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://gteng.co.za/#business",
+        "name": "Gee Tee General Engineering (Pty) Ltd",
+        "alternateName": ["GT Engineering", "Gee Tee Engineering", "GTE", "Gee Tee General Engineering"],
+        "description": "Gee Tee General Engineering is a leading precision CNC machining and engineering solutions provider located in Germiston, Gauteng, South Africa. Founded in 1980, we specialise in CNC turning, CNC milling, EDM wire cutting, surface grinding, laser engraving, reverse engineering, and rapid prototype manufacturing. We achieve tolerances of ±0.01mm and serve the mining, automotive, steel, packaging, and food processing industries across South Africa.",
+        "url": "https://gteng.co.za",
+        "image": "https://gteng.co.za/static/images/sequence/frame-1.webp",
+        "telephone": "+27829258379",
+        "alternateTelephone": "+27118240619",
+        "email": "sales@gteng.co.za",
+        "priceRange": "$$$",
+        "foundingDate": "1980",
+        "numberOfEmployees": {"@type": "QuantitativeValue", "minValue": 10, "maxValue": 50},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "9 Viking Way, Airport Park Ext 4",
+          "addressLocality": "Germiston",
+          "addressRegion": "Gauteng",
+          "postalCode": "1401",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -26.264,
+          "longitude": 28.144
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "07:30",
+            "closes": "16:45"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "07:30",
+            "closes": "12:30"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Germiston" },
+          { "@type": "City", "name": "Johannesburg" },
+          { "@type": "City", "name": "Ekurhuleni" },
+          { "@type": "City", "name": "Boksburg" },
+          { "@type": "City", "name": "Benoni" },
+          { "@type": "City", "name": "Springs" },
+          { "@type": "AdministrativeArea", "name": "Gauteng" },
+          { "@type": "AdministrativeArea", "name": "East Rand" },
+          { "@type": "Country", "name": "South Africa" }
+        ],
+        "knowsAbout": [
+          "CNC Turning", "CNC Milling", "CNC Machining", "EDM Wire Cutting",
+          "Surface Grinding", "Laser Engraving", "Reverse Engineering",
+          "Prototype Manufacturing & 3D Printing", "CAD/CAM Programming", "Edgecam",
+          "SolidWorks", "Precision Engineering",
+          "Precision Metrology", "3D Scanning for Reverse Engineering",
+          "D2 Tool Steel", "P20 Tool Steel", "O1 Tool Steel",
+          "EN19 Steel", "EN24T Steel", "H13 Tool Steel",
+          "Stainless Steel Machining (304, 316, 316L)",
+          "6061-T6 Aluminium", "7075 Aluminium",
+          "Titanium Grade 5", "Brass and Copper Alloys",
+          "Engineering Plastics (PEEK, Delrin, Nylon, UHMWPE)",
+          "Hardened Steel Machining up to 62 HRC"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Precision Engineering Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CNC Turning", "description": "High-precision CNC turning achieving ±0.01mm tolerances on horizontal lathes with up to 2000×700mm capacity and Y-axis live tooling. Shafts, bushings, flanges, sleeves, and rotational components in steel, stainless steel (304/316), aluminium, brass, and engineering plastics." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CNC Milling", "description": "3-axis and 4th-axis CNC vertical milling on Doosan DNM6700 (2 off, work envelope 1400×670×600mm) and Doosan DNM5700 machining centres. Programmed with Edgecam and SolidWorks for complex 3D contours, pockets, and prismatic parts." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EDM Wire Cutting", "description": "Agie Charmilles Cut E 600 (600×400×350mm) and Fanuc Robocut aC400iC EDM wire cutters. Complex profiles, hardened materials up to 62 HRC, die/punch tooling, and intricate geometries with surface finishes to Ra 0.2μm." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Surface Grinding", "description": "Precision surface grinding on Alpa surface grinder for flat, parallel, and square surfaces with tolerances to ±0.005mm. Ideal for tooling faces, gauge blocks, and mating surfaces." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Engraving", "description": "Laser engraving and part marking services for identification, branding, traceability, and serial numbering on metal and plastic components." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reverse Engineering", "description": "Expert reverse engineering of obsolete, worn, or discontinued components for the mining and industrial sectors. Using Edgecam and SolidWorks with 3D measurement to recreate any component from a physical sample." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prototype Manufacturing", "description": "Rapid prototype manufacturing for design validation and testing, fully integrated with in-house CAD/CAM design. From concept to first article in days, not weeks." } }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://gteng.co.za/#cnc-machining",
+        "serviceType": "CNC Machining & Turning",
+        "provider": { "@id": "https://gteng.co.za/#business" },
+        "description": "High-precision CNC milling and turning with ±0.01mm tolerances. Specialising in 6061-T6 Aluminium, 304/316 Stainless Steel, EN19/EN24T high-tensile steels, and engineering plastics for the mining, automotive, and power industries.",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Gauteng" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://gteng.co.za/#edm-wire-cutting",
+        "serviceType": "EDM Wire Cutting",
+        "provider": { "@id": "https://gteng.co.za/#business" },
+        "description": "Sub-micron precision EDM wire cutting on Agie Charmilles Cut E 600 for hardened tool steels (D2, O1, H13) and exotic alloys. Capabilities include complex geometries with ±0.005mm accuracy and Ra 0.2μm surface finishes.",
+        "areaServed": { "@type": "Country", "name": "South Africa" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://gteng.co.za/#reverse-engineering",
+        "serviceType": "Reverse Engineering",
+        "provider": { "@id": "https://gteng.co.za/#business" },
+        "description": "Full-cycle reverse engineering of obsolete or damaged industrial components. Reconstruction using EN19, EN24T, and D2 high-tensile and tool steels for improved part longevity in mining and industrial applications.",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Gauteng" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://gteng.co.za/#surface-grinding",
+        "serviceType": "Precision Surface Grinding",
+        "provider": { "@id": "https://gteng.co.za/#business" },
+        "description": "Precision surface grinding to ±0.005mm on Alpa surface grinder. Flat, parallel, and square finishes for tooling faces, gauge blocks, bearing seats, and mating surfaces across all steel, stainless steel, and aluminium grades.",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Gauteng" }
+      }
+    ]
+  }
+  </script>
+  {% block page_jsonld %}{% endblock %}
+</head>
+<body class="{% block body_class %}page-inner{% endblock %}">
+  <!-- Page Transition Overlay (defaults to visible to prevent FOUC) -->
+  <div id="page-transition">
+    <div class="pt-panel pt-panel--1"></div>
+    <div class="pt-panel pt-panel--2"></div>
+    <div class="pt-panel pt-panel--3"></div>
+  </div>
+  <noscript><style>#page-transition { display: none !important; }</style></noscript>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════════ -->
+  <nav id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Gee Tee Engineering — Home">
+        <img src="/static/images/gt-logo.png?v=3" alt="GT Engineering Logo" class="nav-logo-img" />
+        GEE TEE ENGINEERING
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="/" {% if active_page == 'home' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="/machines" {% if active_page == 'machines' %}class="active"{% endif %}>Services</a></li>
+        <li><a href="/machine-specs" {% if active_page == 'specs' %}class="active"{% endif %}>Machine Specs</a></li>
+        <li><a href="/gallery" {% if active_page == 'gallery' %}class="active"{% endif %}>Gallery</a></li>
+        <li><a href="/contact" class="nav-cta{% if active_page == 'contact' %} active{% endif %}">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE CONTENT ══════════════════════════════════════ -->
+  {% block content %}{% endblock %}
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+  <footer id="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <p class="footer-logo"><img src="/static/images/gt-logo.png?v=2" alt="GT Engineering Logo" class="footer-logo-img" width="32" height="32" /> GEE TEE ENGINEERING</p>
+        <p class="footer-tagline">Precision Engineering Since 1980</p>
+        <p class="footer-desc">Leading CNC machining and precision engineering solutions provider in Germiston, Gauteng, South Africa. Trusted by mining, automotive, steel and packaging industries for over 45 years.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/machines">Services</a></li>
+          <li><a href="/machine-specs">Machine Specs</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-services">
+          <li><a href="/machines#cnc-turning">CNC Turning</a></li>
+          <li><a href="/machines#cnc-milling">CNC Milling</a></li>
+          <li><a href="/machines#edm">EDM Wire Cutting</a></li>
+          <li><a href="/machines#grinding">Surface Grinding</a></li>
+          <li><a href="/machines#prototypes">Laser Engraving</a></li>
+          <li><a href="/machines#reverse">Reverse Engineering</a></li>
+          <li><a href="/machines#prototypes">Prototype Manufacturing &amp; 3D Printing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Contact</p>
+        <address class="footer-address">
+          <p>9 Viking Way<br />Airport Park Ext 4<br />Germiston, Gauteng, 1401</p>
+          <p><a href="tel:+27829258379" rel="noopener">Cell: 082 925 8379</a></p>
+          <p><a href="tel:+27118240619" rel="noopener">Tel: 011 824 0619</a></p>
+          <p><a href="mailto:sales@gteng.co.za" rel="noopener noreferrer">sales@gteng.co.za</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gee Tee General Engineering (Pty) Ltd. All rights reserved.<br />
+      9 Viking Way, Airport Park Ext 4, Germiston, Gauteng, South Africa | CNC Machining | EDM Wire Cutting | Precision Engineering</p>
+    </div>
+  </footer>
+
+  <script src="/static/js/nav.js" defer></script>
+  <script src="/static/js/webgl-bg.js" defer></script>
+  <script src="/static/js/cursor.js" defer></script>
+  <script src="/static/js/animations.js?v=4" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,580 @@
+{% extends "base.html" %}
+
+{% block canonical %}https://gteng.co.za/gallery{% endblock %}
+{% block meta %}
+<title>Engineering Gallery | Gee Tee General Engineering | CNC Machining Germiston</title>
+<meta name="description" content="View the engineering work and precision machining capabilities of Gee Tee General Engineering in Germiston, Gauteng. CNC turned, milled and EDM wire cut components for mining, automotive and steel industries." />
+<meta name="keywords" content="CNC machining gallery Gauteng, precision engineering photos, Gee Tee Engineering work, CNC parts Germiston, engineering components South Africa" />
+{% endblock %}
+{% block og_title %}Engineering Gallery | Gee Tee General Engineering{% endblock %}
+{% block og_desc %}Precision engineering at work — see examples of CNC turned, milled and EDM wire cut components from Gee Tee General Engineering, Germiston, Gauteng.{% endblock %}
+{% block og_url %}https://gteng.co.za/gallery{% endblock %}
+
+{% block page_jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gteng.co.za/"},
+    {"@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://gteng.co.za/gallery"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+  <section class="page-banner" aria-label="Gallery page header">
+    <div class="page-banner-grid" aria-hidden="true"></div>
+    <div class="page-banner-inner">
+      <p class="page-banner-label">Our Work</p>
+      <h1 class="page-banner-title">Engineering<br /><span>Gallery</span></h1>
+      <p class="page-banner-sub">Precision in every detail — a showcase of our CNC machining and engineering capabilities.</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <!-- ═══ SPACE GALLERY ══════════════════════════════════════ -->
+    <section class="space-stage" aria-labelledby="gallery-heading">
+
+      <!-- Starfield canvas (behind everything) -->
+      <canvas id="space-stars" class="space-stars-canvas" aria-hidden="true"></canvas>
+
+      <!-- Nebula glow overlays -->
+      <div class="space-nebula" aria-hidden="true"></div>
+
+      <!-- Section header -->
+      <div class="space-header section-inner">
+        <p class="section-label">Our Work</p>
+        <h2 id="gallery-heading" class="section-heading">Precision Engineering<br /><span>Documented.</span></h2>
+        <p class="section-body max-prose">Every component we manufacture starts as an engineering drawing — a precise document that defines every dimension, tolerance, and surface finish. Drag to explore. Click any card to open full view.</p>
+        <p class="space-hint" aria-hidden="true">
+          <span class="space-hint-line"></span>
+          Drag &amp; hover to explore
+        </p>
+      </div>
+
+      <!-- 3D space carousel viewport -->
+      <div class="space-viewport" id="space-viewport" aria-label="Engineering drawing gallery">
+        <div class="space-rig" id="space-rig">
+          {% for frame in frames %}
+          <div class="space-card"
+               data-index="{{ loop.index0 }}"
+               data-src="{{ frame }}"
+               role="button"
+               tabindex="0"
+               aria-label="Engineering drawing {{ loop.index }} of {{ frames|length }}">
+            <div class="space-card-inner">
+              <img
+                src="{{ frame }}"
+                alt="Precision engineering drawing — Gee Tee General Engineering, Germiston — frame {{ loop.index }}"
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+              />
+              <div class="space-card-glow" aria-hidden="true"></div>
+              <div class="space-card-overlay" aria-hidden="true">
+                <span class="space-card-num">{{ "%02d"|format(loop.index) }}</span>
+                <span class="space-card-zoom">⊕ View</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Hint arrows -->
+      <button class="space-nav space-nav--prev" id="space-prev" aria-label="Previous">&#8249;</button>
+      <button class="space-nav space-nav--next" id="space-next" aria-label="Next">&#8250;</button>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">✕</button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      <figure class="lightbox-figure">
+        <img id="lightbox-img" src="" alt="" />
+        <figcaption id="lightbox-caption" class="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+
+    <!-- CTA -->
+    <section id="cta" aria-label="Call to action">
+      <div class="section-inner cta-inner">
+        <h2 class="cta-heading">Like What You See?</h2>
+        <p class="cta-sub">Let us apply the same precision craftsmanship to your components.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn-primary btn-large">Start a Project</a>
+          <a href="/machines" class="btn-outline btn-large">Our Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+<style>
+/* ══ Professional Gallery Carousel ═══════════════════════════ */
+.space-stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #070d1a 0%, #020408 70%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 4rem;
+}
+.space-stars-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0;
+}
+.space-nebula {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 30% at 20% 40%, rgba(0,80,200,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 25% at 80% 60%, rgba(0,170,255,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 20% at 50% 80%, rgba(0,50,120,0.1) 0%, transparent 60%);
+}
+.space-header {
+  position: relative; z-index: 5; text-align: center;
+  padding-top: 5rem; padding-bottom: 2rem;
+}
+.space-hint {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.75rem; font-size: 0.75rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(0,170,255,0.6);
+  margin-top: 1.5rem; animation: float-hint 3s ease-in-out infinite;
+}
+@keyframes float-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%       { transform: translateY(-4px); opacity: 1; }
+}
+.space-hint-line { display: block; width: 36px; height: 1px; background: rgba(0,170,255,0.5); }
+
+/* ── Horizontal Scroll-Snap Carousel ──────────────────────── */
+.space-viewport {
+  position: relative; z-index: 5; width: 100%;
+  padding: 2rem 0; cursor: grab; user-select: none;
+}
+.space-viewport:active { cursor: grabbing; }
+
+.space-rig {
+  display: flex; gap: 1.5rem;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 2rem calc(50vw - 190px);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.space-rig::-webkit-scrollbar { display: none; }
+
+/* Card — smooth scroll-driven zoom applied via JS */
+.space-card {
+  flex: 0 0 auto;
+  width: 380px; height: 285px;
+  scroll-snap-align: center;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.5s ease,
+              filter 0.5s ease;
+  transform: scale(0.85);
+  opacity: 0.5;
+  filter: brightness(0.7);
+  will-change: transform, opacity, filter;
+}
+.space-card.is-center {
+  transform: scale(1.08);
+  opacity: 1;
+  filter: brightness(1);
+  z-index: 3;
+}
+.space-card.is-near {
+  transform: scale(0.95);
+  opacity: 0.8;
+  filter: brightness(0.85);
+  z-index: 2;
+}
+
+.space-card-inner {
+  width: 100%; height: 100%;
+  position: relative; border-radius: 14px; overflow: hidden;
+  background: #0a0f1e;
+  border: 1px solid rgba(0,170,255,0.08);
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(0,170,255,0.04);
+  transition: border-color 0.4s ease, box-shadow 0.5s ease;
+}
+.space-card.is-center .space-card-inner {
+  border-color: rgba(0,170,255,0.35);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.7),
+    0 0 50px rgba(0,170,255,0.15),
+    0 0 0 1px rgba(0,170,255,0.3);
+}
+.space-card:hover .space-card-inner {
+  border-color: rgba(0,170,255,0.5);
+}
+
+.space-card img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.space-card.is-center img {
+  transform: scale(1.02);
+}
+.space-card:hover img {
+  transform: scale(1.05);
+}
+
+.space-card-glow {
+  position: absolute; inset: 0; border-radius: 12px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0,170,255,0.15) 0%, transparent 70%);
+  opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+}
+.space-card:hover .space-card-glow { opacity: 1; }
+
+.space-card-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 0.5rem;
+  background: rgba(2,10,25,0.5);
+  opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+}
+.space-card:hover .space-card-overlay { opacity: 1; }
+.space-card-num {
+  font-family: 'Outfit', monospace; font-size: 2.5rem;
+  font-weight: 700; color: rgba(0,170,255,0.2); line-height: 1;
+}
+.space-card-zoom {
+  font-size: 0.8rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #0af; font-weight: 600;
+}
+
+/* Nav arrows (repositioned beside carousel) */
+.space-nav {
+  position: absolute; top: 50%; z-index: 10;
+  background: rgba(0,10,30,0.7);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0,170,255,0.2);
+  color: #0af; font-size: 1.8rem;
+  width: 48px; height: 48px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  transform: translateY(-50%);
+}
+.space-nav:hover {
+  background: rgba(0,170,255,0.15);
+  border-color: rgba(0,170,255,0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+.space-nav--prev { left: 1.5vw; }
+.space-nav--next { right: 1.5vw; }
+
+/* Dot indicators */
+.carousel-dots {
+  position: relative; z-index: 10;
+  display: flex; gap: 8px;
+  justify-content: center;
+  padding: 1.5rem 0 0;
+  flex-wrap: wrap;
+  max-width: 360px; margin: 0 auto;
+}
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(0,170,255,0.2);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.carousel-dot:hover { background: rgba(0,170,255,0.5); transform: scale(1.3); }
+.carousel-dot.active {
+  background: #0af;
+  box-shadow: 0 0 8px rgba(0,170,255,0.5);
+  transform: scale(1.3);
+}
+
+/* Counter text */
+.carousel-counter {
+  position: relative; z-index: 10;
+  text-align: center; margin-top: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem; color: rgba(0,170,255,0.5);
+  letter-spacing: 0.15em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .space-card { width: 300px; height: 225px; }
+  .space-rig { gap: 1rem; padding: 1.5rem calc(50vw - 150px); }
+  .space-nav { width: 40px; height: 40px; font-size: 1.4rem; }
+}
+@media (max-width: 480px) {
+  .space-card { width: 260px; height: 195px; }
+  .space-rig { gap: 0.75rem; padding: 1.5rem calc(50vw - 130px); }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Starfield Canvas ─────────────────────────────────── */
+  (function starfield() {
+    var canvas = document.getElementById('space-stars');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var stars = [];
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    function mkStar() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.1,
+        a: Math.random(),
+        da: (Math.random() * 0.006 + 0.001) * (Math.random() < 0.5 ? 1 : -1),
+        vx: (Math.random() - 0.5) * 0.08,
+        vy: (Math.random() - 0.5) * 0.08
+      };
+    }
+
+    resize();
+    for (var i = 0; i < 260; i++) stars.push(mkStar());
+    window.addEventListener('resize', resize);
+
+    (function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        s.x += s.vx; s.y += s.vy; s.a += s.da;
+        if (s.a <= 0.05 || s.a >= 1) s.da *= -1;
+        if (s.x < 0) s.x = canvas.width;
+        if (s.x > canvas.width) s.x = 0;
+        if (s.y < 0) s.y = canvas.height;
+        if (s.y > canvas.height) s.y = 0;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(180,220,255,' + s.a.toFixed(3) + ')';
+        ctx.fill();
+      }
+      requestAnimationFrame(loop);
+    })();
+  })();
+
+  /* ── Professional Horizontal Carousel ─────────────────── */
+  var cards   = Array.from(document.querySelectorAll('.space-card'));
+  var rig     = document.getElementById('space-rig');
+  var prevBtn = document.getElementById('space-prev');
+  var nextBtn = document.getElementById('space-next');
+  if (!rig || cards.length === 0) return;
+
+  var TOTAL   = cards.length;
+  var current = 0;
+  var autoTimer = null;
+  var paused    = false;
+
+  /* Build dot indicators */
+  var dotsWrap = document.createElement('div');
+  dotsWrap.className = 'carousel-dots';
+  rig.parentElement.parentElement.appendChild(dotsWrap);
+
+  /* Build counter */
+  var counter = document.createElement('div');
+  counter.className = 'carousel-counter';
+  rig.parentElement.parentElement.appendChild(counter);
+
+  var dots = [];
+  cards.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+    dot.addEventListener('click', function () { scrollToCard(i); });
+    dotsWrap.appendChild(dot);
+    dots.push(dot);
+  });
+
+  function updateUI(idx) {
+    current = idx;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('active', i === idx);
+    });
+    counter.textContent = (idx + 1) + ' / ' + TOTAL;
+  }
+  updateUI(0);
+
+  function scrollToCard(idx) {
+    idx = Math.max(0, Math.min(idx, TOTAL - 1));
+    var card = cards[idx];
+    var rigRect = rig.getBoundingClientRect();
+    var cardRect = card.getBoundingClientRect();
+    var scrollTarget = rig.scrollLeft + (cardRect.left + cardRect.width / 2) - (rigRect.left + rigRect.width / 2);
+    rig.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+    updateUI(idx);
+    restartAuto();
+  }
+
+  /* Scroll-driven zoom: continuously apply scale classes based on distance from center */
+  var scrollRAF = null;
+  function applyScrollZoom() {
+    var rigRect = rig.getBoundingClientRect();
+    var center  = rigRect.left + rigRect.width / 2;
+    var closest = 0;
+    var minDist = Infinity;
+    var cardW   = cards[0] ? cards[0].offsetWidth : 380;
+    cards.forEach(function (card, i) {
+      var rect = card.getBoundingClientRect();
+      var cardCenter = rect.left + rect.width / 2;
+      var dist = Math.abs(cardCenter - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+      /* Classify: center, near, or far */
+      card.classList.remove('is-center', 'is-near');
+      if (dist < cardW * 0.5) {
+        card.classList.add('is-center');
+      } else if (dist < cardW * 1.5) {
+        card.classList.add('is-near');
+      }
+    });
+    if (closest !== current) updateUI(closest);
+  }
+  rig.addEventListener('scroll', function () {
+    if (scrollRAF) return;
+    scrollRAF = requestAnimationFrame(function () {
+      scrollRAF = null;
+      applyScrollZoom();
+    });
+  }, { passive: true });
+  /* Initial apply */
+  requestAnimationFrame(applyScrollZoom);
+
+  /* Arrow buttons */
+  prevBtn.addEventListener('click', function () { scrollToCard(current - 1); });
+  nextBtn.addEventListener('click', function () { scrollToCard(current + 1); });
+
+  /* Keyboard nav */
+  document.addEventListener('keydown', function (e) {
+    if (document.getElementById('lightbox') && !document.getElementById('lightbox').hidden) return;
+    if (e.key === 'ArrowLeft')  scrollToCard(current - 1);
+    if (e.key === 'ArrowRight') scrollToCard(current + 1);
+  });
+
+  /* Mouse drag to scroll */
+  var isDragging = false, startX = 0, scrollLeft = 0;
+  rig.addEventListener('mousedown', function (e) {
+    isDragging = true;
+    startX = e.pageX - rig.offsetLeft;
+    scrollLeft = rig.scrollLeft;
+    pauseAuto();
+  });
+  rig.addEventListener('mouseleave', function () { isDragging = false; });
+  window.addEventListener('mouseup', function () {
+    if (isDragging) { isDragging = false; restartAuto(); }
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    var x = e.pageX - rig.offsetLeft;
+    var walk = (x - startX) * 1.5;
+    rig.scrollLeft = scrollLeft - walk;
+  });
+
+  /* Mouse wheel horizontal scroll */
+  rig.parentElement.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      rig.scrollLeft += e.deltaY * 1.5;
+      pauseAuto();
+      clearTimeout(rig._wheelRestart);
+      rig._wheelRestart = setTimeout(restartAuto, 2000);
+    }
+  }, { passive: false });
+
+  /* Gentle auto-scroll — advances one card every 4 seconds */
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(function () {
+      if (paused) return;
+      var next = current + 1;
+      if (next >= TOTAL) next = 0;
+      scrollToCard(next);
+    }, 4000);
+  }
+  function stopAuto() { clearInterval(autoTimer); }
+  function pauseAuto() { paused = true; }
+  function restartAuto() {
+    paused = false;
+    startAuto();
+  }
+
+  /* Pause on hover */
+  rig.addEventListener('mouseenter', pauseAuto);
+  rig.addEventListener('mouseleave', function () { if (!isDragging) restartAuto(); });
+
+  /* Touch drag also pauses auto */
+  rig.addEventListener('touchstart', pauseAuto, { passive: true });
+  rig.addEventListener('touchend', function () {
+    setTimeout(restartAuto, 2000);
+  }, { passive: true });
+
+  startAuto();
+
+  /* ── Lightbox ─────────────────────────────────────────── */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg    = document.getElementById('lightbox-img');
+  var lbCap    = document.getElementById('lightbox-caption');
+  var lbClose  = document.getElementById('lightbox-close');
+  var lbPrev   = document.getElementById('lightbox-prev');
+  var lbNext   = document.getElementById('lightbox-next');
+  var lbBack   = document.getElementById('lightbox-backdrop');
+
+  function openLb(idx) {
+    current = ((idx % TOTAL) + TOTAL) % TOTAL;
+    lbImg.src = cards[current].dataset.src;
+    lbImg.alt = cards[current].querySelector('img').alt;
+    lbCap.textContent = 'Gee Tee General Engineering — Drawing ' + (current + 1) + ' of ' + TOTAL;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    stopAuto();
+    lbClose.focus();
+  }
+  function closeLb() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    lbImg.src = '';
+    startAuto();
+  }
+
+  var clickThreshold = 8;
+  var pointerDownX = 0;
+  cards.forEach(function (card, i) {
+    card.addEventListener('mousedown', function (e) { pointerDownX = e.clientX; });
+    card.addEventListener('click', function (e) {
+      if (Math.abs(e.clientX - pointerDownX) < clickThreshold) openLb(i);
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(i); }
+    });
+  });
+
+  lbClose.addEventListener('click', closeLb);
+  lbBack.addEventListener('click',  closeLb);
+  lbPrev.addEventListener('click',  function () { openLb(current - 1); });
+  lbNext.addEventListener('click',  function () { openLb(current + 1); });
+  document.addEventListener('keydown', function (e) {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  openLb(current - 1);
+    if (e.key === 'ArrowRight') openLb(current + 1);
+  });
+})();
+</script>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.DS_Store
+contact_submissions.json
+Gallery Pictures/
+Gee Tee Machines/
+Videos/
+Tooling Companies/
+.agent/
+*.code-workspace
+*.pyc

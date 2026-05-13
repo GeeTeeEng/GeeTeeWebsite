@@ -1,0 +1,832 @@
+{% extends "base.html" %}
+
+{% block canonical %}https://gteng.co.za{% endblock %}
+{% block meta %}
+<title>Gee Tee General Engineering | CNC Machining Germiston Gauteng | Precision Engineering Since 1980</title>
+<meta name="description"
+  content="Gee Tee General Engineering – Germiston's leading precision CNC machining company since 1980. Expert CNC turning, milling, EDM wire cutting, surface grinding, laser engraving, reverse engineering and prototype manufacturing for mining, automotive and steel industries in Gauteng, South Africa." />
+<meta name="keywords"
+  content="CNC machining Gauteng, precision engineering Germiston, CNC turning South Africa, CNC milling Johannesburg, EDM wire cutting Gauteng, machine parts manufacturer South Africa, reverse engineering Germiston, CNC machining company Germiston, engineering Ekurhuleni, precision parts manufacturer" />
+{% endblock %}
+{% block og_title %}Gee Tee General Engineering | CNC Machining & Precision Engineering, Germiston{% endblock %}
+{% block og_desc %}Gauteng's leading precision CNC machining company. CNC turning, milling, EDM wire cutting and reverse
+engineering since 1980. Serving mining, automotive and steel industries across South Africa.{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block page_jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who offers CNC machining in Gauteng, South Africa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gee Tee General Engineering, located at 9 Viking Way, Airport Park Ext 4, Germiston, Gauteng, is one of South Africa's leading CNC machining companies. Founded in 1980, they offer CNC turning, CNC milling, EDM wire cutting, surface grinding, and reverse engineering. Contact: 082 925 8379."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can manufacture precision engineering parts in Germiston?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gee Tee General Engineering (Pty) Ltd has been manufacturing precision engineering parts in Germiston, Gauteng since 1980. They service the mining, automotive, steel, packaging, and food industries with CNC machining, EDM wire cutting, and reverse engineering capabilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is EDM wire cutting and who provides it in Johannesburg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EDM (Electrical Discharge Machining) wire cutting is a precision machining process for complex geometries and hard materials using an electrically charged wire. Gee Tee General Engineering in Germiston, Gauteng operates an Agie Charmilles Cut E 600 EDM wire cutter (600×400×400mm work envelope) and provides this service to industries across Johannesburg and Gauteng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which engineering company in South Africa offers reverse engineering services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gee Tee General Engineering in Germiston, Gauteng specialises in reverse engineering of obsolete or worn components. With over 45 years of experience and in-house CAD/CAM design using Edgecam and SolidWorks, they can precisely replicate any engineering component for the mining, industrial, and automotive sectors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Gee Tee Engineering offer 4th axis CNC milling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Gee Tee General Engineering operates three fully integrated 4th-axis CNC vertical machining centres: a Doosan DNM6700 (1400×700×600mm), a Litz CV1000 (1000×600×500mm), and an Akira Seiki V5.5 XP (1400×700×600mm), all programmed with Edgecam and SolidWorks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CNC tolerances can Gee Tee Engineering achieve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gee Tee Engineering achieves standard tolerances of ±0.01mm on CNC turning and milling, ±0.005mm on surface grinding, and ±0.005mm with Ra 0.2μm surface finish on EDM wire cutting. Tighter tolerances are available on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials does Gee Tee Engineering machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gee Tee machines carbon steel (EN8, EN19, EN24), stainless steel (304, 316, 316L, duplex), tool steels (D2, H13, M2), aluminium alloys (6061, 7075), brass, copper, and engineering plastics (Nylon, Delrin, PEEK). EDM wire cutting handles hardened materials up to 62 HRC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Gee Tee Engineering ensure quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every component passes through rigorous inspection using calibrated measuring instruments. Full material traceability and certificates of conformance are provided on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum CNC work envelope at Gee Tee Engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The largest CNC milling envelope is 1400×670×600mm on the Doosan DNM6700 machining centre. The EDM wire cutters handle up to 600×400×350mm. Our CNC lathes offer a maximum turning capacity of 700mm in diameter and 2000mm in length."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Gee Tee Engineering cut hardened steel with EDM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Agie Charmilles Cut E 600 and Fanuc Robocut aC400iC EDM wire cutters can cut hardened tool steels up to 62 HRC with intricate profiles and surface finishes down to Ra 0.2μm. Ideal for die/punch tooling and wear-resistant components."
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══ PRELOADER ══════════════════════════════════════════ -->
+<div id="preloader" role="status" aria-label="Loading">
+  <p class="preloader-label">System Initializing</p>
+  <div class="preloader-bar-track">
+    <div id="preloader-bar"></div>
+  </div>
+  <p class="preloader-counter" id="preloader-counter">0%</p>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section id="hero" aria-label="Kinetic engineering hero animation">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <!-- Light leak refraction overlays -->
+  <div class="hero-light-leak" aria-hidden="true"></div>
+  <div class="hero-light-leak-3" aria-hidden="true"></div>
+  <div class="hero-scanline" aria-hidden="true"></div>
+  <div class="hero-ui">
+    <!-- Scroll invite now occupies the tagline slot — larger, more prominent -->
+    <p class="hero-tagline hero-tagline--scroll" aria-label="Scroll to explore">
+      <span class="hero-tagline-scroll-line" aria-hidden="true"></span>
+      Scroll to Explore
+    </p>
+    <h1 class="sr-only">Gee Tee General Engineering — Precision CNC Machining & Engineering in Germiston, Gauteng</h1>
+    <p class="hero-title" aria-hidden="true">Precision<br /><span>Engineering.</span></p>
+  </div>
+
+</section>
+
+<!-- ═══ ABOUT ═════════════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <p class="section-label">About Gee Tee Engineering</p>
+      <h2 id="about-heading" class="section-heading">Precision CNC Engineering<br />Solutions in Gauteng</h2>
+      <p class="section-body">Gee Tee General Engineering (Pty) Ltd was formed in <strong>1980</strong> with the sole
+        purpose of providing the engineering industry with quality products and an efficient service. With over
+        <strong>45 years of industry experience</strong>, we have built a loyal multinational client base across South
+        Africa's most demanding sectors.
+      </p>
+      <p class="section-body">Our in-house design and programming is done using <strong>Edgecam</strong> and
+        <strong>SolidWorks</strong>, with all 2D and 3D designs fully integrated with our CNC equipment. We offer expert
+        consultation and can produce working prototypes for testing and design refinement.
+      </p>
+      <a href="/machines" class="btn-primary">Explore Our Services</a>
+    </div>
+    <div class="about-stats" aria-label="Company statistics">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <p class="stat-value">1980</p>
+          <p class="stat-label">Est. Year</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-value">45+</p>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-value">15+</p>
+          <p class="stat-label">CNC Machines</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-value">0.01mm</p>
+          <p class="stat-label">Tolerance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES OVERVIEW ════════════════════════════════ -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <div class="section-header-row">
+      <div>
+        <p class="section-label">What We Do</p>
+        <h2 id="services-heading" class="section-heading">CNC Machining, EDM<br />& Grinding Services</h2>
+      </div>
+      <a href="/machines" class="btn-outline">View All Services</a>
+    </div>
+    <div class="services-grid">
+      <article class="service-card has-video" aria-label="CNC Turning">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/cnc-turning.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--turn"></div>
+          <h3>CNC Turning</h3>
+          <p>High-precision horizontal turning featuring live tooling with Y-axis capabilities for
+            complex rotational components.</p>
+          <a href="/machines#cnc-turning" class="service-link" aria-label="Learn more about CNC Turning">Learn more
+            →</a>
+        </div>
+      </article>
+      <article class="service-card has-video" aria-label="CNC Milling">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/cnc-milling.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--mill"></div>
+          <h3>CNC Milling</h3>
+          <p>3-axis and fully integrated 4th-axis vertical machining for large prismatic components and complex 3D profiles.</p>
+          <a href="/machines#cnc-milling" class="service-link" aria-label="Learn more about CNC Milling">Learn more
+            →</a>
+        </div>
+      </article>
+      <article class="service-card has-video" aria-label="EDM Wire Cutting">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/edm-wire-cutting.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--edm"></div>
+          <h3>EDM Wire Cutting</h3>
+          <p>High-precision EDM wire cutting for complex profiles, hardened materials, and exact punch-and-die tooling.</p>
+          <a href="/machines#edm" class="service-link" aria-label="Learn more about EDM Wire Cutting">Learn more →</a>
+        </div>
+      </article>
+      <article class="service-card has-video" aria-label="Surface Grinding">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/surface-grinding.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--grind"></div>
+          <h3>Surface Grinding</h3>
+          <p>Precision surface grinding for perfectly flat, parallel, and square surfaces finished to exacting tolerances.</p>
+          <a href="/machines#grinding" class="service-link" aria-label="Learn more about Surface Grinding">Learn more
+            →</a>
+        </div>
+      </article>
+      <article class="service-card has-video" aria-label="Reverse Engineering">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/reverse-engineering.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--reverse"></div>
+          <h3>Reverse Engineering</h3>
+          <p>Expert replication and redesign of obsolete or worn components for mine maintenance, plant shutdowns and
+            legacy equipment restoration.</p>
+          <a href="/machines#reverse" class="service-link" aria-label="Learn more about Reverse Engineering">Learn more
+            →</a>
+        </div>
+      </article>
+      <article class="service-card has-video" aria-label="Prototype Manufacturing & 3D Printing">
+        <video class="service-video" muted loop playsinline preload="none">
+          <source src="/static/videos/prototype-manufacturing.mp4" type="video/mp4">
+        </video>
+        <div class="service-video-overlay"></div>
+        <div class="service-card-content">
+          <div class="service-icon service-icon--proto"></div>
+          <h3>Prototype Manufacturing &amp; 3D Printing</h3>
+          <p>Rapid prototyping and 3D printing fully integrated with our Edgecam and SolidWorks CAD/CAM design capabilities for fast
+            design validation and testing.</p>
+          <a href="/machines#prototypes" class="service-link"
+            aria-label="Learn more about Prototype Manufacturing & 3D Printing">Learn more →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INDUSTRIES ════════════════════════════════════════ -->
+<section id="industries" aria-labelledby="industries-heading">
+  <div class="section-inner">
+    <p class="section-label">Industries We Serve</p>
+    <h2 id="industries-heading" class="section-heading">Industries We Serve:<br />Mining, Automotive & Steel</h2>
+    <div class="industries-strip">
+      <div class="industry-pill" aria-label="Mining industry">⛏ Mining</div>
+      <div class="industry-pill" aria-label="Automotive industry">🚗 Automotive</div>
+      <div class="industry-pill" aria-label="Steel industry">🏗 Steel</div>
+      <div class="industry-pill" aria-label="Packaging industry">📦 Packaging</div>
+      <div class="industry-pill" aria-label="Food processing industry">🏭 Food Processing</div>
+      <div class="industry-pill" aria-label="General engineering">⚙ General Engineering</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPANY PROFILE ══════════════════════════════════ -->
+<section id="company-profile" aria-labelledby="profile-heading">
+  <div class="section-inner profile-grid">
+    <div class="profile-text">
+      <p class="section-label">Company Profile</p>
+      <h2 id="profile-heading" class="section-heading">45+ Years of<br />Manufacturing Excellence</h2>
+      <p class="section-body">Gee Tee General Engineering (Pty) Ltd was formed in 1980 with the sole purpose of
+        providing the engineering industry with quality products and an efficient service. We have full in-house
+        manufacturing facilities including CNC milling, CNC turning, EDM wire cutting, surface grinding, 3D printing, and laser engraving.</p>
+      <p class="section-body">We offer cutting-edge design solutions for the rapid development of working prototypes.
+        Our experience in the design and manufacture of many components for the automotive, mining, steel and food
+        industries is extensive. Once a working design has been developed, we produce working prototypes for testing and
+        further design refinement. Our commitment to the client continues throughout the process until a successful
+        design has been achieved.</p>
+      <p class="section-body">Gee Tee Engineering's pursuit of excellence ensures our staff are equipped with up-to-date
+        training while we continue to improve our machinery in line with current technological advancements. Our quality
+        products and commitment to client satisfaction have earned the company a loyal and growing multinational client
+        base.</p>
+    </div>
+    <div class="profile-pillars" aria-label="Core company values">
+      <div class="pillar-card">
+        <div class="pillar-number">01</div>
+        <h3>In-House Design</h3>
+        <p>All programming and design done with Edgecam and SolidWorks — fully integrated with our CNC equipment.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">02</div>
+        <h3>Client-First Culture</h3>
+        <p>Our commitment to your project continues throughout the process until a successful design has been achieved.
+        </p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">03</div>
+        <h3>Continuous Improvement</h3>
+        <p>We constantly invest in staff training and machinery updates to stay at the forefront of precision
+          engineering.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">04</div>
+        <h3>Multinational Clients</h3>
+        <p>Decades of quality have earned us a loyal and growing multinational client base across South Africa's major
+          industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENTS ══════════════════════════════════════════ -->
+<section id="clients" aria-labelledby="clients-heading">
+  <div class="clients-inner">
+    <p class="section-label">Tooling Partners</p>
+    <h2 id="clients-heading" class="section-heading clients-heading">
+      Ultimate Precision.<br /><span>World Class Tooling.</span>
+    </h2>
+
+    <!-- 3D Perspective Logo Strip — infinite scroll, hover to zoom -->
+    <div class="logo-strip-wrap" aria-label="Our tooling partners">
+      <!-- Edge fade overlays -->
+      <div class="logo-strip-fade logo-strip-fade--left" aria-hidden="true"></div>
+      <div class="logo-strip-fade logo-strip-fade--right" aria-hidden="true"></div>
+
+      <div class="logo-strip-inner" id="logo-strip">
+
+        <!-- ── SET 1 ──────────────────────────────────── -->
+
+        <div class="logo-card" data-client="Kyocera">
+          <img src="/static/images/tooling_blue/Kyocera.jpeg" alt="Kyocera" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Sandvik">
+          <img src="/static/images/tooling_blue/Sandvik.jpeg" alt="Sandvik" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Seco">
+          <img src="/static/images/tooling_blue/Seco.jpeg" alt="Seco" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Taguetek">
+          <img src="/static/images/tooling_blue/Taguetek.png" alt="Taguetek" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Tungaloy">
+          <img src="/static/images/tooling_blue/Tungaloy.jpeg" alt="Tungaloy" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Kennametal">
+          <img src="/static/images/tooling_blue/kennametal.jpeg" alt="Kennametal" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+
+        <!-- ── SET 2 (duplicate for seamless loop) ───── -->
+
+        <div class="logo-card" data-client="Kyocera" aria-hidden="true">
+          <img src="/static/images/tooling_blue/Kyocera.jpeg" alt="Kyocera" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Sandvik" aria-hidden="true">
+          <img src="/static/images/tooling_blue/Sandvik.jpeg" alt="Sandvik" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Seco" aria-hidden="true">
+          <img src="/static/images/tooling_blue/Seco.jpeg" alt="Seco" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Taguetek" aria-hidden="true">
+          <img src="/static/images/tooling_blue/Taguetek.png" alt="Taguetek" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Tungaloy" aria-hidden="true">
+          <img src="/static/images/tooling_blue/Tungaloy.jpeg" alt="Tungaloy" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+        <div class="logo-card" data-client="Kennametal" aria-hidden="true">
+          <img src="/static/images/tooling_blue/kennametal.jpeg" alt="Kennametal" style="max-width: 100%; max-height: 60px; object-fit: contain;">
+        </div>
+
+      </div><!-- /logo-strip-inner -->
+    </div><!-- /logo-strip-wrap -->
+
+    <!-- Sparkle Canvas Stage -->
+    <div class="clients-sparkle-stage" aria-hidden="true">
+      <div class="clients-sparkle-gradient"></div>
+      <!-- Canvas MUST be above earth-curve so sparkles are visible -->
+      <div class="clients-earth-curve"></div>
+      <canvas id="sparkle-canvas" class="clients-sparkle-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ (AI SEARCH OPTIMISED) ════════════════════════ -->
+
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner faq-inner">
+    <p class="section-label">Common Questions</p>
+    <h2 id="faq-heading" class="section-heading">CNC Machining &<br />Engineering FAQs</h2>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Who offers CNC machining in Gauteng, South Africa?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Gee Tee General Engineering, located in Germiston, Gauteng, is one of South Africa's most established CNC
+            machining companies. Operating since 1980, we provide CNC turning, CNC milling, EDM wire cutting, surface
+            grinding and reverse engineering. We serve clients across the greater Johannesburg, Ekurhuleni, and Gauteng
+            regions. Call us on <a href="tel:+27829258379">082 925 8379</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What industries do you serve?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We manufacture precision components for the <strong>mining, automotive, steel, packaging, and food
+              processing</strong> industries. Our clients range from local South African businesses to multinational
+            corporations. Whether you need machine parts for a mine shaft, automotive tooling, or food-grade stainless
+            steel components, we have the capability and experience.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Can you reverse-engineer obsolete or worn-out parts?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Absolutely. Reverse engineering is one of our core specialities. Our in-house designers use <strong>Edgecam
+              and SolidWorks</strong> to precisely recreate components from physical samples or drawings — even when no
+            original specifications exist. This is particularly valuable for legacy mining equipment, discontinued
+            automotive parts and industrial machinery spares.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do you manufacture prototypes?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes. We offer complete prototype manufacturing services integrated with our in-house CAD/CAM design
+            capabilities. Once your design is finalised in Edgecam or SolidWorks, we can produce functional prototypes
+            for testing and refinement. We remain committed to your project until a successful design has been achieved.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Where is Gee Tee Engineering located?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We are located at <strong>9 Viking Way, Airport Park Ext 4, Germiston, Gauteng</strong>. We are
+            conveniently situated in the heart of Ekurhuleni's industrial corridor, close to OR Tambo International
+            Airport, making us easily accessible to clients across the greater Johannesburg and Gauteng area. Cell: <a
+              href="tel:+27829258379">082 925 8379</a> | Tel: <a href="tel:+27118240619">011 824 0619</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What CNC tolerances can you achieve?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We achieve standard tolerances of <strong>±0.01mm on CNC turning and milling</strong>, ±0.005mm on surface
+            grinding, and ±0.005mm with Ra 0.2μm surface finish on EDM wire cutting. Tighter tolerances are available on
+            request depending on material and geometry. Our CNC machines are regularly
+            calibrated to maintain these standards.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What materials do you machine — including stainless steel and tool steels?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We machine a wide range of materials: <strong>carbon steels</strong> (mild steel, EN8, EN19, EN24),
+            <strong>stainless steels</strong> (304, 316, 316L, duplex), <strong>tool steels</strong> (D2, H13, M2, S7),
+            <strong>aluminium alloys</strong> (6061, 7075, 2024), <strong>brass and copper</strong>, and
+            <strong>engineering plastics</strong> (Nylon, Delrin, PEEK, UHMWPE). Our EDM wire cutter handles hardened
+            materials up to 62 HRC.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          How do you ensure quality and precision?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Our manufacturing processes feature stringent quality control. Every component passes through rigorous
+            inspection using calibrated measuring instruments. We provide full material traceability and certificates of
+            conformance on request, ensuring your parts meet the highest engineering standards.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What is your maximum CNC work envelope?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Our largest CNC milling envelope is <strong>1400 × 700 × 600mm</strong> on the Doosan DNM6700 machining
+            centre. The Agie Charmilles EDM wire cutter handles <strong>600 × 400 × 350mm</strong>. Our CNC lathes
+            offer a maximum turning capacity of <strong>700mm in diameter and 2000mm in length</strong> for shafts, sleeves, and rotational components.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Can you cut hardened steel with EDM wire cutting?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes. Our <strong>Agie Charmilles Cut E 600</strong> EDM wire cutter can cut through hardened tool steels
+            <strong>up to 62 HRC</strong> with intricate profiles and surface finishes down to <strong>Ra
+              0.2μm</strong>. This makes it ideal for die/punch tooling, wear-resistant inserts, and complex geometries
+            that conventional machining cannot achieve.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ════════════════════════════════════════════════ -->
+<section id="cta" aria-label="Call to action">
+  <div class="section-inner cta-inner">
+    <h2 class="cta-heading">Ready to Start<br />Your Project?</h2>
+    <p class="cta-sub">Talk to our engineering team about your requirements. We respond within 24 hours.</p>
+    <div class="cta-actions">
+      <a href="/contact" class="btn-primary btn-large">Get a Quote</a>
+      <a href="tel:+27829258379" class="btn-outline btn-large">Call 082 925 8379</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Hero canvas — load after all scripts (GSAP etc) are ready
+  window.addEventListener('load', function () {
+    const s = document.createElement('script');
+    s.src = '/static/js/hero.js?v=5';
+    document.body.appendChild(s);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const answer = this.nextElementSibling;
+      const isOpen = !answer.hidden;
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(function (a) { a.hidden = true; });
+      document.querySelectorAll('.faq-question').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.querySelector('.faq-icon').textContent = '+';
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        answer.hidden = false;
+        this.setAttribute('aria-expanded', 'true');
+        this.querySelector('.faq-icon').textContent = '−';
+      }
+    });
+  });
+
+  // Service card video hover (desktop) + two-tap (mobile)
+  (function () {
+    var isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    var activeCard = null;
+
+    function activateCard(card) {
+      var video = card.querySelector('.service-video');
+      if (video) {
+        card.classList.add('video-active');
+        video.play().catch(function () { });
+      }
+      activeCard = card;
+    }
+
+    function deactivateCard(card) {
+      var video = card.querySelector('.service-video');
+      if (video) {
+        card.classList.remove('video-active');
+        video.pause();
+        video.currentTime = 0;
+      }
+      if (activeCard === card) activeCard = null;
+    }
+
+    document.querySelectorAll('.service-card.has-video').forEach(function (card) {
+      var video = card.querySelector('.service-video');
+      var link = card.querySelector('.service-link');
+      if (!video) return;
+
+      card.style.cursor = 'pointer';
+
+      // Desktop: hover plays/pauses
+      card.addEventListener('mouseenter', function () {
+        if (!isTouch) activateCard(card);
+      });
+      card.addEventListener('mouseleave', function () {
+        if (!isTouch) deactivateCard(card);
+      });
+
+      // Click / Tap handler
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return; // let native links work
+
+        if (isTouch) {
+          // Two-tap: first tap = play video, second tap = navigate
+          if (activeCard === card) {
+            // Second tap — navigate
+            if (link) window.location.href = link.href;
+          } else {
+            // First tap — deactivate any other card, activate this one
+            e.preventDefault();
+            if (activeCard) deactivateCard(activeCard);
+            activateCard(card);
+          }
+        } else {
+          // Desktop click — navigate
+          if (link) window.location.href = link.href;
+        }
+      });
+    });
+
+    // Tap outside any card resets active video
+    if (isTouch) {
+      document.addEventListener('click', function (e) {
+        if (activeCard && !e.target.closest('.service-card.has-video')) {
+          deactivateCard(activeCard);
+        }
+      });
+    }
+  })();
+
+  // ── Sparkle Canvas Engine — always-on, init after layout ──
+  (function initSparkles() {
+    function start() {
+      var canvas = document.getElementById('sparkle-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var DENSITY = 700;
+      var SPEED = 0.45;
+      var COLOR = '0,170,255';
+
+      var particles = [];
+      var W, H;
+      var mouse = { x: null, y: null };
+
+      var stage = canvas.parentElement;
+      stage.addEventListener('mousemove', function(e) {
+        var rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      stage.addEventListener('mouseleave', function() {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function resize() {
+        W = canvas.width = stage.offsetWidth || stage.clientWidth || 1440;
+        H = canvas.height = stage.offsetHeight || stage.clientHeight || 320;
+      }
+
+      function Particle() { this.reset(); }
+
+      Particle.prototype.reset = function () {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.r = Math.random() * 2 + 0.6;
+        this.vx = (Math.random() - 0.5) * SPEED;
+        this.vy = (Math.random() - 0.5) * SPEED;
+        this.alpha = Math.random() * 0.8 + 0.2;
+        this.dalpha = (Math.random() * 0.018 + 0.004) * (Math.random() < 0.5 ? 1 : -1);
+      };
+
+      Particle.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        // Mouse repulsion force
+        if (mouse.x !== null) {
+          var dx = mouse.x - this.x;
+          var dy = mouse.y - this.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          var forceRadius = 140; // Push radius
+          
+          if (dist < forceRadius && dist > 0) {
+            var force = (forceRadius - dist) / forceRadius;
+            // Push away smoothly based on inverse distance
+            this.x -= (dx / dist) * force * 3;
+            this.y -= (dy / dist) * force * 3;
+          }
+        }
+        
+        this.alpha += this.dalpha;
+        if (this.alpha <= 0.05 || this.alpha >= 1) this.dalpha *= -1;
+        this.alpha = Math.max(0.05, Math.min(1, this.alpha));
+        if (this.x < -forceRadius) this.x = W + forceRadius;
+        if (this.x > W + forceRadius) this.x = -forceRadius;
+        if (this.y < -forceRadius) this.y = H + forceRadius;
+        if (this.y > H + forceRadius) this.y = -forceRadius;
+      };
+
+      Particle.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + COLOR + ',' + this.alpha.toFixed(3) + ')';
+        ctx.fill();
+      };
+
+      resize();
+      var count = Math.max(Math.round((W * H) / (1920 * 1080) * DENSITY), 120);
+      for (var i = 0; i < count; i++) particles.push(new Particle());
+
+      function loop() {
+        ctx.clearRect(0, 0, W, H);
+        for (var j = 0; j < particles.length; j++) {
+          particles[j].update();
+          particles[j].draw();
+        }
+        requestAnimationFrame(loop);
+      }
+      loop();
+
+      window.addEventListener('resize', function () {
+        resize();
+        for (var k = 0; k < particles.length; k++) particles[k].reset();
+      });
+    }
+
+    // Start after full layout paint
+    if (document.readyState === 'complete') {
+      start();
+    } else {
+      window.addEventListener('load', start);
+    }
+  })();
+
+  // ── Logo Strip — infinite scroll + 3D hover zoom ──────────
+  (function initLogoStrip() {
+    var strip = document.getElementById('logo-strip');
+    if (!strip) return;
+
+    // Duplicate strip for seamless loop (already duplicated in HTML)
+    // Find half-width and animate
+    var pos = 0;
+    var speed = 0.55; // px per frame
+    var paused = false;
+    var hoveredCard = null;
+
+    // Calculate exact width of one set (6 logos + 6 gaps)
+    var halfW = 0;
+    function calcHalfW() {
+      var cards = strip.querySelectorAll('.logo-card');
+      if (cards.length >= 12) {
+        halfW = cards[6].offsetLeft - cards[0].offsetLeft;
+      } else {
+        halfW = strip.scrollWidth / 2;
+      }
+    }
+    calcHalfW();
+    window.addEventListener('resize', calcHalfW);
+
+    function tick() {
+      if (!paused && halfW > 0) {
+        pos += speed;
+        if (pos >= halfW) pos -= halfW;
+        strip.style.transform = 'translateX(-' + pos + 'px)';
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Hover to pause + zoom
+    var cards = strip.querySelectorAll('.logo-card');
+    cards.forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        paused = true;
+        hoveredCard = card;
+        cards.forEach(function (c) {
+          c.style.opacity = c === card ? '1' : '0.3';
+          c.style.transform = c === card
+            ? 'translateZ(60px) scale(1.45)'
+            : 'translateZ(-20px) scale(0.85)';
+          c.style.filter = c === card
+            ? 'drop-shadow(0 0 22px rgba(0,170,255,0.9))'
+            : 'none';
+        });
+      });
+      card.addEventListener('mouseleave', function () {
+        paused = false;
+        hoveredCard = null;
+        cards.forEach(function (c) {
+          c.style.opacity = '';
+          c.style.transform = '';
+          c.style.filter = '';
+        });
+      });
+    });
+  })();
+</script>
+{% endblock %}
