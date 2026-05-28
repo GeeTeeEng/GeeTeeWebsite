@@ -69,6 +69,63 @@ def gallery():
 def contact():
     return render_template("contact.html", active_page="contact")
 
+@app.route("/connect")
+def connect():
+    return render_template("connect.html")
+
+@app.route("/connect/vcard")
+def download_vcard():
+    """Generates and serves the vCard file for Paul Chatzakis."""
+    import base64
+    
+    # Load and base64 encode the profile photo if it exists
+    photo_str = ""
+    photo_path = os.path.join(app.root_path, 'static', 'images', 'paul-profile.jpg')
+    if os.path.exists(photo_path):
+        try:
+            with open(photo_path, "rb") as f:
+                encoded = base64.b64encode(f.read()).decode('utf-8')
+                
+            # Fold base64 to 72 characters per line with leading space for folded lines as per RFC 2426 (vCard 3.0 specs)
+            folded_photo = []
+            first_line_prefix = "PHOTO;TYPE=JPEG;ENCODING=b:"
+            available_len = 75 - len(first_line_prefix)
+            folded_photo.append(first_line_prefix + encoded[:available_len])
+            
+            remaining = encoded[available_len:]
+            while remaining:
+                folded_photo.append(" " + remaining[:74])
+                remaining = remaining[74:]
+            
+            photo_str = "\n".join(folded_photo) + "\n"
+        except Exception as e:
+            # Fallback gracefully if image reading fails
+            photo_str = ""
+
+    vcard_content = (
+        "BEGIN:VCARD\n"
+        "VERSION:3.0\n"
+        "N:Chatzakis;Paul;;;\n"
+        "FN:Paul Chatzakis\n"
+        "ORG:Gee Tee General Engineering (Pty) Ltd\n"
+        "TITLE:Managing Director\n"
+        "TEL;TYPE=CELL,VOICE:+27829258379\n"
+        "TEL;TYPE=WORK,VOICE:+27118240619\n"
+        "EMAIL;TYPE=PREF,INTERNET:paul@gteng.co.za\n"
+        "URL:https://gteng.co.za\n"
+        "ADR;TYPE=WORK:;;9 Viking Way, Airport Park Ext 4;Germiston;Gauteng;1401;South Africa\n"
+        f"{photo_str}"
+        "END:VCARD"
+    )
+    return Response(
+        vcard_content,
+        mimetype="text/vcard",
+        headers={
+            "Content-Disposition": "attachment; filename=paul_chatzakis_gte.vcf",
+            "Cache-Control": "no-cache, no-store, must-revalidate"
+        }
+    )
+
 @app.route("/contact/submit", methods=["POST"])
 def contact_submit():
     """Server-side contact form handler.
